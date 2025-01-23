@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:somno/features/components/NavigationDrawer.dart';
+import 'package:somno/features/components/BottomNavigation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,11 +20,16 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(FontAwesomeIcons.alignLeft),
-          onPressed: () {},
-        ),
+        leading: Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(FontAwesomeIcons.alignLeft),
+              onPressed: () {
+                Scaffold.of(context).openDrawer(); // Open the drawer programmatically
+              },
+            ),
+          ),
       ),
+      drawer: const CustomNavigationDrawer(),
       body: Expanded(
         child: Column(
           children: [
@@ -42,14 +49,12 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      transform: Matrix4.translationValues(0, -Height * 0.07, 0),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          size: Width * 0.1,
-                          FontAwesomeIcons.cloudMoon,
-                          color: Colors.red,
-                        ),
+                      transform:
+                          Matrix4.translationValues(0, -Height * 0.07, 0),
+                      child: Icon(
+                        size: 50,
+                        FontAwesomeIcons.cloudMoon,
+                        color: Colors.red,
                       ),
                     ),
                     Center(
@@ -64,25 +69,23 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Container(
-                      transform: Matrix4.translationValues(0, -Height * 0.07, 0),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          size: Width * 0.1,
-                          FontAwesomeIcons.brain,
-                          color: Color(0xFF2836CD),
-                        ),
+                      transform:
+                          Matrix4.translationValues(0, -Height * 0.07, 0),
+                      child: Icon(
+                        size: 50,
+                        FontAwesomeIcons.brain,
+                        color: Color(0xFF2836CD),
                       ),
                     ),
                   ],
                 )),
             Expanded(
-                // height: Height * 0.6,
                 child: Column(
               children: [
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(top: Height * 0.07, left: Width * 0.1),
+                  padding:
+                      EdgeInsets.only(top: Height * 0.03, left: Width * 0.1),
                   child: Text(
                     'Community Posts',
                     style: TextStyle(
@@ -92,35 +95,53 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: Width * 0.04, vertical: Height * 0.03),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: Width * 0.1, vertical: Height * 0.02),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: Colors.black,
+                    ),
+                  ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        height: Height * 0.2,
-                        width: Width * 0.3,
-                        child: Image.asset(
-                          'assets/Logo/Somno Logo Blue Shade Version.jpg',
-                          fit: BoxFit.cover,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)), 
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/Logo/Somno Logo Blue Shade Version.jpg'), 
+                            fit: BoxFit.fill,
+                          ),
                         ),
+                        height: Height * 0.2, 
+                        width: Width * 0.3, 
                       ),
                       Container(
-                        width: Width * 0.37,
+                        width: Width * 0.3,
+                        height: 100,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              padding: EdgeInsets.all(Height * 0.02),
-                              alignment: Alignment.centerLeft,
+                              alignment: Alignment.topLeft,
                               child: Text(
                                 'Posted by Uzair',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(Height * 0.02),
-                              alignment: Alignment.centerLeft,
                               child: Text(
                                 'This is a post about sleep and its importance in our lives.See more...',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                           ],
@@ -140,77 +161,94 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(top: Height * 0.02, left: Width * 0.1),
+                  padding:
+                      EdgeInsets.only(left: Width * 0.1),
                   child: Text(
-                    'Community Posts',
+                    'History',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,
                     ),
                   ),
                 ),
-              ],
-             )
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF2836CD),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
+                Container(
+                  margin: EdgeInsets.only(top: Height * 0.02),
+                  width: Width * 0.8,
+                  height: Height * 0.18,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFF2836CD),
+                  ),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Home'),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Icon(
+                          size: 70,
+                          FontAwesomeIcons.brain,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              child: Text(
+                                'Dreams History',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                          );
-                        },
-                        icon: Icon(
-                          FontAwesomeIcons.home,
-                          color: Colors.white,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          FontAwesomeIcons.solidFaceSmileWink,
-                          color: Colors.white,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          FontAwesomeIcons.circlePlus,
-                          color: Colors.white,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          FontAwesomeIcons.userGroup,
-                          color: Colors.white,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          FontAwesomeIcons.solidUser,
-                          color: Colors.white,
+                            Container(
+                              padding: EdgeInsets.only(top: Height * 0.02),
+                              alignment: Alignment.center,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(FontAwesomeIcons.search,
+                                        size: 15, color: Colors.red),
+                                    SizedBox(
+                                      width: Width * 0.04,
+                                    ),
+                                    Text(
+                                      'Search Here',
+                                      style: TextStyle(
+                                        color: Color(0xFF2836CD),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                style: TextButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             )
-          ],
+            ),
+            CustomBottomNavBar(),
+         ],
         ),
       ),
     );
   }
 }
+
