@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:somno/features/home/main.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key});
@@ -14,19 +15,15 @@ class CustomBottomNavBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Color(0xFF2836CD),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+      child: 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Home'),
-                    ),
-                  );
+                  //move to home page '/'
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
+                  
                 },
                 icon: Icon(
                   FontAwesomeIcons.home,
@@ -63,8 +60,8 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
             ],
           ),
-        ],
-      ),
+        
+      
     );
   }
 }

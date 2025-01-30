@@ -30,8 +30,7 @@ class _HomePageState extends State<HomePage> {
           ),
       ),
       drawer: const CustomNavigationDrawer(),
-      body: Expanded(
-        child: Column(
+      body: Column(
           children: [
             Container(
                 margin: EdgeInsets.only(top: Height * 0.05),
@@ -247,7 +246,7 @@ class _HomePageState extends State<HomePage> {
             CustomBottomNavBar(),
          ],
         ),
-      ),
+      
     );
   }
 }

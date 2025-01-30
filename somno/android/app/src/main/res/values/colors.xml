@@ -1,0 +1,5 @@
+<!-- res/values/colors.xml -->
+<resources>
+    <color name="transparent">#f70a0a</color>
+    <!-- Other colors -->
+</resources>
