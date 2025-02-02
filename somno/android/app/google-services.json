@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638916685013",
+    "project_id": "somno-1c861",
+    "storage_bucket": "somno-1c861.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638916685013:android:650a883a5b31706089465c",
+        "android_client_info": {
+          "package_name": "com.example.somno"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjQXSeQuEaU82akiq_-nDwHBfysobNRb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

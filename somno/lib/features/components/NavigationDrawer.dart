@@ -15,7 +15,7 @@ class CustomNavigationDrawer extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/images/Somno Logo Blue Shade Version.png'),
+                  backgroundImage: AssetImage('assets/Logo/Somno Logo Blue Shade Version (2).png'),
                 ),
                 SizedBox(width: 10),
                 Column(
@@ -63,7 +63,7 @@ class CustomNavigationDrawer extends StatelessWidget {
             leading: Icon(FontAwesomeIcons.signOutAlt),
             title: Text('Logout'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, '/login');
             },
           ),
           ListTile(
