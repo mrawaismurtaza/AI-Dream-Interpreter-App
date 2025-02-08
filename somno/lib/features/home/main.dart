@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:somno/features/components/NavigationDrawer.dart';
 import 'package:somno/features/pages/page-1.dart';
 import 'package:somno/features/pages/page-2.dart';
 import 'package:somno/features/pages/page-3.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   final _pages = [
     const PageFirst(),
-    const PageTwo(),
+    PageTwo(),
     const PageThird(),
     const PageFourth(),
     const PageFifth(),
@@ -40,6 +41,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      
+      drawer: CustomNavigationDrawer(),
       body: _pages[_pageIndex],
       bottomNavigationBar: buildNavBar(context,),
     );
@@ -66,7 +69,7 @@ class _HomePageState extends State<HomePage> {
             icon: _pageIndex == 0
                 ? Icon(
                     FontAwesomeIcons.home,
-                    color: Colors.red,
+                    color: Colors.white,
                     size: 38,
                   )
                 : Icon(
@@ -83,7 +86,7 @@ class _HomePageState extends State<HomePage> {
             icon: _pageIndex == 1
                 ? Icon(
                     FontAwesomeIcons.search,
-                    color: Colors.red,
+                    color: Colors.white,
                     size: 38,
                   )
                 : Icon(
@@ -100,7 +103,7 @@ class _HomePageState extends State<HomePage> {
             icon: _pageIndex == 2
                 ? Icon(
                     FontAwesomeIcons.circlePlus,
-                    color: Colors.red,
+                    color: Colors.white,
                     size: 38,
                   )
                 : Icon(
@@ -117,7 +120,7 @@ class _HomePageState extends State<HomePage> {
             icon: _pageIndex == 3
                 ? Icon(
                     FontAwesomeIcons.solidHeart,
-                    color: Colors.red,
+                    color: Colors.white,
                     size: 38,
                   )
                 : Icon(
@@ -134,7 +137,7 @@ class _HomePageState extends State<HomePage> {
             icon: _pageIndex == 4
                 ? Icon(
                   FontAwesomeIcons.solidUser,
-                  color: Colors.red,
+                  color: Colors.white,
                   size: 38,
                 )
                 : Icon(

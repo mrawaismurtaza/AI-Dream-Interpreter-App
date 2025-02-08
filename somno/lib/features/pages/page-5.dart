@@ -10,6 +10,8 @@ class PageFifth extends StatefulWidget {
 class _PageFifthState extends State<PageFifth> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Placeholder(
+      child: Text('Page 5'),
+    );
   }
 }

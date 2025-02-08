@@ -10,6 +10,8 @@ class PageTwo extends StatefulWidget {
 class _PageTwoState extends State<PageTwo> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Placeholder(
+      child: AboutDialog(),
+    );
   }
 }
