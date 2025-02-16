@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
-            icon: const Icon(FontAwesomeIcons.alignLeft),
+            icon: const Icon(FontAwesomeIcons.alignLeft, color: Color(0xFF2836CD)),
             onPressed: () {
               Scaffold.of(context)
                   .openDrawer(); // Open the drawer programmatically

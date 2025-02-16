@@ -3,6 +3,7 @@ import 'package:somno/config/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:somno/features/home/main.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 void main() async{
@@ -17,12 +18,14 @@ await Firebase.initializeApp(
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of application.
   @override
   Widget build(BuildContext context) {
+
+    User? user = FirebaseAuth.instance.currentUser;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/signup',
+      initialRoute: user == null ? '/login' : '/',
       routes: appRoutes,
     );
   }
