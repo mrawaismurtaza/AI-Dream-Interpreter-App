@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 ? Icon(
                     FontAwesomeIcons.home,
                     color: Colors.white,
-                    size: 38,
+                    size: 30,
                   )
                 : Icon(
                     FontAwesomeIcons.home,
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 ? Icon(
                     FontAwesomeIcons.search,
                     color: Colors.white,
-                    size: 38,
+                    size: 30,
                   )
                 : Icon(
                     FontAwesomeIcons.search,
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                 ? Icon(
                     FontAwesomeIcons.circlePlus,
                     color: Colors.white,
-                    size: 38,
+                    size: 30,
                   )
                 : Icon(
                     FontAwesomeIcons.plus,
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                 ? Icon(
                     FontAwesomeIcons.solidHeart,
                     color: Colors.white,
-                    size: 38,
+                    size: 30,
                   )
                 : Icon(
                     FontAwesomeIcons.heart,
@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                 ? Icon(
                   FontAwesomeIcons.solidUser,
                   color: Colors.white,
-                  size: 38,
+                  size: 30,
                 )
                 : Icon(
                   FontAwesomeIcons.user,

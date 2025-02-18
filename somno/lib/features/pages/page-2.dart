@@ -11,7 +11,7 @@ class _PageTwoState extends State<PageTwo> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder(
-      child: AboutDialog(),
+      child: Text('Page 2'),
     );
   }
 }

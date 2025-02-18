@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:somno/features/home/main.dart';
@@ -63,6 +64,7 @@ class CustomNavigationDrawer extends StatelessWidget {
             leading: Icon(FontAwesomeIcons.signOutAlt),
             title: Text('Logout'),
             onTap: () {
+              FirebaseAuth.instance.signOut();
               Navigator.pushReplacementNamed(context, '/login');
             },
           ),
